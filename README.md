@@ -6,6 +6,7 @@ This project provides a Python script to generate a standardized repository stru
 
 The scaffold will create the following directory and file structure:
 
+```
 <repo_name>/
 ├── config_logging.py
 ├── main.py
@@ -19,6 +20,7 @@ The scaffold will create the following directory and file structure:
     ├── test_cases.csv
     ├── tests_load.py
     └── test_cases.json
+```
 
 ### Template Files
 - `main.py`: The main Python script with a basic template for a `Solution` class.
