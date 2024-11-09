@@ -1,10 +1,23 @@
 import os
 import sys
+import ssl
+import urllib.request  # Changed import to use urllib
 
 def read_template(template_path):
     """Reads and returns the content of the given template file."""
     with open(template_path, 'r') as template_file:
         return template_file.read()
+
+def fetch_gitignore():
+    """Fetches the Python .gitignore from GitHub using urllib."""
+    url = "https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore"
+    context = ssl._create_unverified_context()  # Create an unverified SSL context
+    try:
+        with urllib.request.urlopen(url, context=context) as response:
+            # Read and decode the content from the response
+            return response.read().decode('utf-8')
+    except urllib.error.URLError as e:
+        raise Exception(f"Failed to fetch .gitignore file from {url}. Error: {e}")
 
 def create_repo_structure(repo_name):
     # Get the directory of the script and move one level up
@@ -51,6 +64,13 @@ def create_repo_structure(repo_name):
                     else:
                         pass  # Just create an empty file for others
                     print(f"Created file: {file_path}")
+
+        # Fetch and add the .gitignore file
+        gitignore_content = fetch_gitignore()
+        gitignore_path = os.path.join(repo_path, ".gitignore")
+        with open(gitignore_path, "w") as gitignore_file:
+            gitignore_file.write(gitignore_content)
+        print(f"Created .gitignore from: {gitignore_path}")
 
         print("Repository structure created successfully!")
 
