@@ -74,7 +74,9 @@ This will create a directory named `my_project` with the predefined structure an
 You can easily modify the following parts:
 
 - **Template Files**: Edit the templates in the `templates/` directory to adjust the content of the generated files.
-- **Repository Structure**: Add or modify the files in the `structure` dictionary within the `create_repo_structure` function.
+- **Repository Structure**: Add or modify the files in the `structure` dictionary within the `create_repo_structure` 
+function.
+- **.gitignore**: Retrieved from https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore (SSL verification is disabled for the retrieval)
 
 ## Running Tests
 
