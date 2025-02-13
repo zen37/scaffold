@@ -8,6 +8,7 @@ The scaffold will create the following directory and file structure:
 
 ```
 <repo_name>/
+├── .env
 ├── config_logging.py
 ├── main.py
 ├── test_main.py
@@ -23,7 +24,8 @@ The scaffold will create the following directory and file structure:
 ```
 
 ### Template Files
-- `main.py`: The main Python script with a basic template for a `Solution` class.
+- `main.py`: The main Python script with a basic template for a `Config` and `Solution` class.
+- `.env`: Holds the environment variables (used only for development, not for production).
 - `config_logging.py`: A template for configuring logging, with support for failure and summary logs.
 - `test_main.py`: A test file that uses `pytest` to run unit tests against the `Solution` class.
 - `config_test.yaml`: A YAML configuration file containing test case settings.

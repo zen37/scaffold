@@ -29,7 +29,7 @@ def create_repo_structure(repo_name):
 
     # Define the directory and file structure
     structure = {
-        "": ["config_logging.py", "main.py", "test_main.py"],  # Root files
+        "": [".env", "config_logging.py", "main.py", "test_main.py"],  # Root files
         "logs/test": ["failure.log", "summary.log"],  # Log files inside logs/test
         "test": ["config_test.yaml", "test_cases.csv", "tests_load.py", "test_cases.json"]  # Test files
     }
@@ -40,7 +40,8 @@ def create_repo_structure(repo_name):
         "config_logging.py": os.path.join(base_dir, 'templates', 'config_logging.py'),
         "test_main.py": os.path.join(base_dir, 'templates', 'test_main.py'),
         "tests_load.py": os.path.join(base_dir, 'templates', 'tests_load.py'),
-        "config_test.yaml": os.path.join(base_dir, 'templates', 'config_test.yaml')
+        "config_test.yaml": os.path.join(base_dir, 'templates', 'config_test.yaml'),
+        ".env": os.path.join(base_dir, 'templates', '.env')
     }
 
     try:
